@@ -3,11 +3,14 @@ import { useState } from "react";
 
 export default function DataInput() {
     const { content, setContent } = useContent();
+    const [error, setError] = useState<string>("");
 
     const [value, setValue] = useState(JSON.stringify(content, null, 2));
 
     return (
         <div className="prose w-full p-4">
+            {error && <p className="text-red-500">{error}</p>}
+
             <div className="mb-4">
                 <textarea
                     name="data"
@@ -22,11 +25,12 @@ export default function DataInput() {
             <button
                 className="btn"
                 onClick={() => {
+                    setError("");
                     try {
                         const json = JSON.parse(value);
                         setContent(json);
-                    } catch (error) {
-                        console.error(error);
+                    } catch {
+                        setError("Invalid JSON");
                     }
                 }}
             >
