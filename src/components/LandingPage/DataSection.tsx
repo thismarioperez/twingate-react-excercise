@@ -42,7 +42,7 @@ export default function DataSection({ url }: Props) {
     }
 
     return (
-        <div className="prose">
+        <div className="prose py-4">
             <pre>{JSON.stringify(data, null, 2)}</pre>
             <button className="btn" onClick={fetchData}>
                 refresh
