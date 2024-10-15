@@ -1,10 +1,8 @@
-import { hero, imageText, dataSection } from "@/data";
 import DataSection from "./DataSection";
 import Hero from "./Hero";
 import ImageText from "./ImageText";
 import { SectionType, Section as TSection } from "@/entities";
-
-const data = [hero, imageText, dataSection, dataSection, dataSection];
+import { useContent } from "@/hooks/useContent";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const SECTION: Record<SectionType, any> = {
@@ -25,9 +23,10 @@ const Section = ({ type, ...props }: SectionProps) => {
 };
 
 export default function LandingPage() {
+    const { content } = useContent();
     return (
         <div className="prose size-full">
-            {data.map((section, idx) => (
+            {content.map((section, idx) => (
                 <Section key={idx} {...section} />
             ))}
         </div>
