@@ -19,6 +19,10 @@ const defaultContent: Section[] = [
         type: "data",
         url: "https://dog.ceo/api/breeds/image/random",
     },
+    {
+        type: "data",
+        url: "https://api.openbrewerydb.org/v1/breweries",
+    },
 ];
 
 type ContentContextType = {
