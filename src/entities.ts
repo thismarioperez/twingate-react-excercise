@@ -1,17 +1,22 @@
-export type User = {
-    id: number;
-    name: string;
-    isAdmin?: boolean;
+export type SectionType = "hero" | "image-text" | "data";
+
+export type Section = {
+    type: SectionType;
+};
+export type HeroSection = {
+    type: "hero";
+    imageURI: string;
 };
 
-export type Category = {
-    id: number;
-    name: string;
+export type ImageTextSection = {
+    type: "image-text";
+    imageURI: string;
+    text: string;
+    title?: string;
+    leftToRight?: boolean;
 };
 
-export type Product = {
-    id: number;
-    name: string;
-    price: number;
-    categoryId: number;
+export type DataSection = {
+    type: "data";
+    url: string;
 };
