@@ -12,6 +12,12 @@ describe("ImageText", () => {
         expect(screen.getByRole("paragraph")).toBeInTheDocument();
     });
 
+    it("should not render title if no title is provided", () => {
+        render(<ImageText {...imageText} title="" />);
+
+        expect(screen.queryByRole("heading")).not.toBeInTheDocument();
+    });
+
     it("should render message if no imageURI is provided", () => {
         render(<ImageText {...imageText} imageURI="" />);
 
