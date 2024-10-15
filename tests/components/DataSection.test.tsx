@@ -22,6 +22,24 @@ describe("DataSection", () => {
         expect(await screen.findByText(/https/i)).toBeInTheDocument();
     });
 
+    it("should truncated message if message is too long", async () => {
+        const message = "a".repeat(256);
+
+        global.fetch = vi.fn().mockResolvedValue({
+            ok: true,
+            json: () =>
+                Promise.resolve({
+                    message,
+                    status: "success",
+                }),
+        });
+
+        render(<DataSection {...dataSection} />);
+        const text = (await screen.findByRole("code")).textContent;
+
+        expect(text).toHaveLength(258);
+    });
+
     it("should render button", async () => {
         render(<DataSection {...dataSection} />);
 

@@ -6,6 +6,8 @@ export default function DataSection({ url }: Props) {
     const [data, setData] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
 
+    const text = data ? JSON.stringify(data, null, 2) : "";
+
     const fetchData = async () => {
         setIsLoading(true);
 
@@ -43,7 +45,9 @@ export default function DataSection({ url }: Props) {
 
     return (
         <div className="prose py-4">
-            <pre>{JSON.stringify(data, null, 2)}</pre>
+            <pre>
+                <code>{text.length < 255 ? text : `${text.slice(0, 255)}...`}</code>
+            </pre>
             <button className="btn" onClick={fetchData}>
                 refresh
             </button>
