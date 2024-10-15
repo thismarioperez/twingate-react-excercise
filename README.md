@@ -1,4 +1,4 @@
-# React starter
+# Twingate React Excercise
 
 ## Scripts
 
