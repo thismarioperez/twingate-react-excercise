@@ -3,12 +3,12 @@ export type SectionType = "hero" | "image-text" | "data";
 export type Section = {
     type: SectionType;
 };
-export type Hero = Section & {
+export type HeroSection = Section & {
     type: "hero";
     imageURI: string;
 };
 
-export type ImageText = Section & {
+export type ImageTextSection = Section & {
     type: "image-text";
     imageURI: string;
     text: string;
@@ -16,7 +16,7 @@ export type ImageText = Section & {
     leftToRight?: boolean;
 };
 
-export type Data = Section & {
+export type DataSection = Section & {
     type: "data";
     url: string;
 };
