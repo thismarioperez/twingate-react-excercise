@@ -25,7 +25,7 @@ const Section = ({ type, ...props }: SectionProps) => {
 export default function LandingPage() {
     const { content } = useContent();
     return (
-        <div className="prose size-full">
+        <div className="prose w-full">
             {content.map((section, idx) => (
                 <Section key={idx} {...section} />
             ))}

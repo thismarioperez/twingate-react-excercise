@@ -3,8 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+    html,
+    body,
     #root {
-        @apply min-h-screen w-full;
+        @apply size-full;
     }
 }
 
