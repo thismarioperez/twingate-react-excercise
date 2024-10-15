@@ -1,9 +1,15 @@
-import Greeting from "./components/Greeting";
+import DataInput from "./components/DataInput";
+import LandingPage from "./components/LandingPage";
 
 function App() {
     return (
-        <div className="w-full">
-            <Greeting />
+        <div className="grid size-full min-h-screen grid-cols-2">
+            <div>
+                <DataInput />
+            </div>
+            <div>
+                <LandingPage />
+            </div>
         </div>
     );
 }
