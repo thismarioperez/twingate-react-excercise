@@ -1,8 +1,6 @@
 import { HeroSection } from "@/entities";
 
-type Props = {
-    imageURI: HeroSection["imageURI"];
-};
+type Props = Omit<HeroSection, "type">;
 export default function Hero({ imageURI }: Props) {
     if (!imageURI) {
         return (
@@ -13,8 +11,8 @@ export default function Hero({ imageURI }: Props) {
     }
 
     return (
-        <div className="size-full">
-            <img className="size-full object-cover" src={imageURI} alt={`Hero image pointing to ${imageURI}`} />;
+        <div className="h-36 w-full py-4">
+            <img className="m-0 size-full object-cover" src={imageURI} />
         </div>
     );
 }
