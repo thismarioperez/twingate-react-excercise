@@ -1,4 +1,4 @@
-import { HeroSection, ImageTextSection } from "@/entities";
+import { DataSection, HeroSection, ImageTextSection } from "@/entities";
 
 export const hero: HeroSection = {
     type: "hero",
@@ -11,4 +11,9 @@ export const imageText: ImageTextSection = {
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     title: "Lorem ipsum",
     leftToRight: true,
+};
+
+export const dataSection: DataSection = {
+    type: "data",
+    url: "https://dog.ceo/api/breeds/image/random",
 };
