@@ -15,4 +15,4 @@ For convenience, a `.nvmrc` file is included. Run `nvm use` before installing de
 1. clone this project: `git clone git@github.com:thismarioperez/twingate-react-excercise.git`
 2. install dependencies with `yarn install`
 3. run `yarn dev`
-4. visit [http://localhost:5174/](http://localhost:5174/) to see the app.
+4. visit [http://localhost:5173/](http://localhost:5173/) to see the app.
